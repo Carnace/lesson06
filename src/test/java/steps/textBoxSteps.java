@@ -12,13 +12,13 @@ public class textBoxSteps {
     private static final String TITLE = "Text Box";
 
     @Step("Открытие страницы")
-    public static void openPage(){
+    public void openPage(){
         open("https://demoqa.com/text-box");
         $(".main-header").shouldHave(Condition.text(TITLE));
     }
 
     @Step("Заполнение формы")
-    public static void fillForm(String fullName, String email, String currentAddress, String text) {
+    public void fillForm(String fullName, String email, String currentAddress, String text) {
         $(By.id("userName")).setValue(fullName);
         $(By.id("userEmail")).setValue(email);
         $(By.id("currentAddress")).setValue(currentAddress);
@@ -26,12 +26,12 @@ public class textBoxSteps {
     }
 
     @Step("Нажатие на кнопку 'Submit'")
-    public static void clickBySubmit() {
+    public void clickBySubmit() {
         $(By.id("submit")).click();
     }
 
     @Step("Проверка выходной формы")
-    public static void checkFormWithData(String fullName, String email, String currentAddress, String text) {
+    public void checkFormWithData(String fullName, String email, String currentAddress, String text) {
         $x("//p[@id='name']").shouldHave(Condition.text("Name:")).shouldHave(Condition.text(fullName));
         $x("//p[@id='email']").shouldHave(Condition.text("Email:")).shouldHave(Condition.text(email));
         $x("//p[@id='currentAddress']").shouldHave(Condition.text("Current Address :")).shouldHave(Condition.text(currentAddress));

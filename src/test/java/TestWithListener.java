@@ -4,6 +4,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -26,6 +27,7 @@ public class TestWithListener {
         Configuration.startMaximized = true;
     }
 
+    @DisplayName("Проверка формы. Listener")
     @Test
     public void testWithListener(){
         SelenideLogger.addListener("allure", new AllureSelenide());
